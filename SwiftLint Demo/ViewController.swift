@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let tempVal = 10
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.random
         printOddNumbers(number: 10)
+        
     }
 
     private func printOddNumbers(number:Int) {
@@ -25,6 +27,13 @@ class ViewController: UIViewController {
         }
     }
 
+    private func returnRuleViolation() -> Bool {
+        guard tempVal < 0 else { return false }
+
+        if tempVal % 2 == 0 { return true }
+        
+        return false
+    }
     
 }
 
